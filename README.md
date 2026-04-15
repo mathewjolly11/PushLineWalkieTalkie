@@ -22,6 +22,8 @@ See `CONTRIBUTING.md` for guidelines.
 MIT. See `LICENSE`.
 # Pushline
 
+[**Live Demo**](https://pushlinewalkietalkie.vercel.app/)
+
 Pushline is a same-network, push-to-talk web app. Create a room, share the code, and talk in real time with people on the same Wi-Fi or hotspot. It uses Supabase Realtime for signaling and presence, plus WebRTC audio for live voice.
 
 ## Features

@@ -1,79 +1,59 @@
-# WalkieTalkie
+# Pushline Walkie Talkie
 
-A small browser-based project.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-## Quick start
-
-1. Open `index.html` in your browser.
-2. Edit `styles.css` and `app.js` to customize behavior and styling.
-
-## Project structure
-
-- `index.html` - Entry point.
-- `styles.css` - Styles.
-- `app.js` - Client-side logic.
-
-## Contributing
-
-See `CONTRIBUTING.md` for guidelines.
-
-## License
-
-MIT. See `LICENSE`.
-# Pushline
-
-[**Live Demo**](https://pushlinewalkietalkie.vercel.app/)
+**[Live Demo](https://pushlinewalkietalkie.vercel.app/)**
 
 Pushline is a same-network, push-to-talk web app. Create a room, share the code, and talk in real time with people on the same Wi-Fi or hotspot. It uses Supabase Realtime for signaling and presence, plus WebRTC audio for live voice.
 
-## Features
+## ✨ Features
+
 - Push-to-talk voice button with live level meter
 - Same-network rooms with quick room codes
 - Public and private room support
 - Email/password auth (Supabase)
 - Public room list for signed-in users
 
-## Tech Stack
+## 🛠️ Tech Stack
+
 - HTML, CSS, JavaScript
-- Supabase (Auth + Realtime)
+- [Supabase](https://supabase.io/) (Auth + Realtime)
 - WebRTC audio
-- SweetAlert2 for UI dialogs
+- [SweetAlert2](https://sweetalert2.github.io/) for UI dialogs
 
-## Project Structure
-- index.html - UI layout
-- styles.css - Styling
-- app.js - App logic, Supabase, and WebRTC
+## 🚀 Getting Started
 
-## Setup
-1. Copy config.sample.js to config.js and add your Supabase URL + anon key.
-2. Open index.html in a modern browser.
-3. Allow microphone access when prompted.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/PushLineWalkieTalkie.git
+    ```
+2.  **Set up your Supabase config:**
+    -   Copy `config.sample.js` to `config.js`.
+    -   Add your Supabase URL and anon key to `config.js`.
+3.  **Set up the Supabase database:**
+    -   This app expects a Supabase project with Auth and Realtime enabled.
+    -   You can create the required `rooms` table and policies using the SQL in `supabase/schema.sql`.
+4.  **Run the app:**
+    -   Open `index.html` in a modern browser.
+    -   Allow microphone access when prompted.
 
-## Supabase Setup
-This app expects a Supabase project with:
-- Auth enabled (email/password)
-- Realtime enabled
-- A rooms table (for room metadata)
+## 🎤 Usage
 
-Suggested rooms table fields:
-- id (uuid, primary key)
-- code (text)
-- name (text)
-- is_public (boolean)
-- created_by (uuid)
+1.  Sign up or sign in.
+2.  Create a room or join one by code.
+3.  Hold the talk button to speak.
 
-You can create the table and policies with the SQL in supabase/schema.sql.
+## ❤️ Contributing
 
-## Open Source Checklist
-1. Do not commit config.js or any .env files.
-2. Verify no real Supabase keys or URLs appear in the repo.
-3. Share config.sample.js so contributors can set up their own config.
-4. Keep database setup steps in supabase/schema.sql and this README.
+This is an open-source project, and contributions are welcome! Whether it's fixing a bug, adding a feature, or improving documentation, your help is appreciated.
 
-## Usage
-1. Sign up or sign in.
-2. Create a room or join one by code.
-3. Hold the talk button to speak.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
 
-## Credits
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 🙏 Credits
+
 Created by Mathew Jolly.

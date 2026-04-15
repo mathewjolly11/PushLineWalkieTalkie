@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pushline</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="page">
+    <section class="landing">
+      <div class="landing-hero">
+        <div class="landing-badge">Realtime Push-To-Talk</div>
+        <h2 class="landing-title">Instant voice rooms for squads, teams, and friends.</h2>
+        <p class="landing-copy">
+          Pushline is a lightweight walkie-talkie web app. Create a room, share the ID,
+          and talk in real time with crystal-clear voice.
+        </p>
+        <div class="cta-row" id="landing-cta">
+          <a class="btn" href="#auth-panel">Sign In</a>
+          <a class="btn ghost" href="#auth-panel">Sign Up</a>
+        </div>
+      </div>
+      <div class="landing-features">
+        <div class="feature-card">
+          <h3>One tap to talk</h3>
+          <p>Hold the button, speak, and release. No clutter, just voice.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Realtime rooms</h3>
+          <p>Presence shows who is connected and who is speaking.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure auth</h3>
+          <p>Email and password sign-in powered by Supabase.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="app">
+    <header class="top">
+      <div class="title-block">
+        <div class="signal">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <h1>Pushline</h1>
+      </div>
+      <div class="status" id="status">
+        <span class="led" id="status-led"></span>
+        <span class="status-text" id="status-text">Connected</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel left" id="auth-panel">
+        <div class="panel-header">
+          <span class="knob"></span>
+          <h2>Auth</h2>
+        </div>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="auth-email" placeholder="you@radio.com" />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" id="auth-password" placeholder="••••••••" />
+        </label>
+        <div class="auth-actions" id="auth-actions">
+          <button class="btn ghost" id="sign-in">Sign In</button>
+          <button class="btn ghost" id="sign-up">Sign Up</button>
+        </div>
+        <button class="btn" id="sign-out">Sign Out</button>
+        <div class="auth-user" id="auth-user">Signed out</div>
+
+        <div class="divider"></div>
+
+        <div class="panel-header">
+          <span class="knob"></span>
+          <h2>Create Room</h2>
+        </div>
+        <label class="field">
+          <span>Room Name</span>
+          <input type="text" id="room-name" placeholder="Squad Alpha" />
+        </label>
+        <div class="toggle">
+          <span>Public</span>
+          <button class="switch" id="room-visibility" aria-pressed="true">
+            <span></span>
+          </button>
+          <span>Private</span>
+        </div>
+        <button class="btn" id="create-room">Create</button>
+      </section>
+
+      <section class="walkie">
+        <div class="walkie-body">
+          <div class="dial-row">
+            <span class="dial"></span>
+            <span class="dial"></span>
+            <span class="dial"></span>
+          </div>
+          <button class="ptt" id="ptt" aria-pressed="false">
+            <span>HOLD TO TALK</span>
+          </button>
+          <div class="meter">
+            <div class="meter-bar"></div>
+            <div class="meter-bar"></div>
+            <div class="meter-bar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel right">
+        <div class="panel-header">
+          <span class="knob"></span>
+          <h2>Join Room</h2>
+        </div>
+        <label class="field">
+          <span>Room ID</span>
+          <input type="text" id="room-id" placeholder="WALK-204" />
+        </label>
+        <button class="btn" id="join-room">Join</button>
+      </section>
+    </main>
+
+    <section class="panel public-rooms" id="public-rooms-panel">
+      <div class="panel-header">
+        <span class="knob"></span>
+        <h2>Public Rooms</h2>
+      </div>
+      <div class="room-list" id="public-rooms-list">
+        <div class="room-empty">No public rooms yet.</div>
+      </div>
+    </section>
+
+    <footer class="bottom">
+      <div class="panel-header">
+        <span class="knob small"></span>
+        <h2>Users in Room</h2>
+      </div>
+      <ul class="users" id="users-list">
+        <li class="user">
+          <span class="name">No users</span>
+          <span class="mic"></span>
+        </li>
+      </ul>
+      <div class="credit">
+        Created by <a href="https://mathewjolly.vercel.app" target="_blank" rel="noreferrer">mathew jolly</a>
+      </div>
+    </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
